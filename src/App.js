@@ -1,20 +1,23 @@
-const Child = () => {
-  return (
-    <h2>Heloo, I am a child</h2>
-  );
-}
+import { useState } from "react"
 
 const App = () => {
-  console.log('Heloo');
+    const [count, setCount] = useState(0)
 
-  return (
-    <div>
-      <h1>My New component</h1>
-      <hr />
-      <input />
-      <Child />
-    </div>
-  );
+    const increamentCount = () => {
+        setCount(count + 1)
+    }
+
+    const decrementCount = () => {
+        setCount(count - 1)
+    }
+
+    return (
+        <div>
+            <h1>{count}</h1>
+            <button onClick={increamentCount}>+1</button>
+            <button onClick={decrementCount}>-1</button>
+        </div>
+    )
 }
 
-export default App;
+export default App
